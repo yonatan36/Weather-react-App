@@ -8,14 +8,16 @@ function App() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`;
 
   const searchLocation = (event) => {
-    if (event.key === "Enter") {
-      axios.get(url).then((response) => {
-        setData(response.data);
-        console.log(response.data);
-      });
-      setLocation("");
-    }
+    axios.get(url).then((response) => {
+      setData(response.data);
+      console.log(response.data);
+    });
+    setLocation("");
   };
+  const handleClear = () => {
+    setData("");
+  };
+
 
   return (
     <div className="app">
@@ -23,10 +25,15 @@ function App() {
         <input
           value={location}
           onChange={(event) => setLocation(event.target.value)}
-          onKeyPress={searchLocation}
           placeholder="Enter Location"
           type="text"
         />
+        <button className="SearchButton" onClick={searchLocation}>
+          search
+        </button>
+        <button className="button" onClick={handleClear}>
+          Clear
+        </button>
       </div>
       <div className="container">
         <div className="top">

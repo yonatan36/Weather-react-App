@@ -32,13 +32,35 @@ h1 {
 
 .app:before {
   content: '';
-  background: url('./assets/sunset.jpg') no-repeat center center/cover;
+  background: url('./assets/pexels-pixabay-531756.jpg') no-repeat center center/cover;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   z-index: -1;
+}
+.button {
+  margin-left: 8px;
+  background-color: #ff4081;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  /* Add more custom styles as needed */
+}
+.SearchButton {
+  margin-left: 8px;
+  background-color: #6340ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  /* Add more custom styles as needed */
 }
 
 .app .search {
