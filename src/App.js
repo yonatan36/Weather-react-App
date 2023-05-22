@@ -1,8 +1,8 @@
 
 import React, { useState } from "react";
 import axios from "axios";
-import hotImage from "./assets/hot.jpg";
-import rainImage from "./assets/cold.jpg";
+// import hotImage from "./assets/hot.jpg";
+// import rainImage from "./assets/cold.jpg";
 
 function App() {
   const [data, setData] = useState({});
@@ -10,6 +10,7 @@ function App() {
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=78088675cd77949027551735b4394a04&lang=he`;
 
+  
   const searchLocation = async (event) => {
     try {
       const response = await axios.get(url);
@@ -28,14 +29,14 @@ function App() {
     setData("");
   };
 
-  let backgroundImage;
-  if (data.main && data.main.temp > 30) {
-    backgroundImage = hotImage;
-  } else if (data.main && data.main.temp < 18) {
-    backgroundImage = rainImage;
-  } else {
-    backgroundImage = null; 
-  }
+  // let backgroundImage;
+  // if (data.main && data.main.temp > 30) {
+  //   backgroundImage = hotImage;
+  // } else if (data.main && data.main.temp < 18) {
+  //   backgroundImage = rainImage;
+  // } else {
+  //   backgroundImage = null; 
+  // }
 
   return (
     <div className="app">
@@ -56,7 +57,7 @@ function App() {
       <div className="container">
         <div className="top">
           <div className="location">
-            <p>{data.name}</p>
+            <h2>{data.name}</h2>
           </div>
           <div className="temp">
             {data.main ? (
