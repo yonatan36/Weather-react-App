@@ -57,7 +57,12 @@ function App() {
       <div className="container">
         <div className="top">
           <div className="location">
-            <h2>{data.name}</h2>
+            <h2>
+              {data.name &&
+                data.sys &&
+                data.sys.country &&
+                `${data.name} ,${data.sys.country}`}
+            </h2>
           </div>
           <div className="temp">
             {data.main ? (
@@ -68,6 +73,9 @@ function App() {
           </div>
           <div className="description">
             {data.weather ? <p>{data.weather[0].description}</p> : null}
+          </div>
+          <div className="clear">
+            {data.weather ? <p>{data.weather[0].main}</p> : null}
           </div>
         </div>
       </div>
